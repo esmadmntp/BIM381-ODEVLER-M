@@ -1,4 +1,4 @@
-# İlişkisel Cebir ve Sorular
+# İlişkisel Cebir ve Sorularhttps://github.com/esmadmntp/BIM381-ODEVLER-M/tree/main/0dev-1-2
 
 1. **Soru:** Kapasitesi 50'den büyük etkinliklerin adları
    * **İlişkisel Cebir:** $\pi_{title} (\sigma_{capacity > 50} (event))$
