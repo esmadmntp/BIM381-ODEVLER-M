@@ -1,0 +1,24 @@
+BEKLENEN SONUÇ ÖZETİ
+Not: Bu dosya psql terminalinden alınmış ham çıktı değildir. Gerçek çıktıyı kendi PostgreSQL ortamında şu komutla üret:
+psql -d kafe -a -f dml.sql > dml_cikti.txt 2>&1
+
+İlk SELECT (UPDATE öncesi):
+Çay           20.00
+Türk Kahvesi  35.00
+Latte         60.00
+
+UPDATE sonrası SELECT:
+Çay           25.00
+Türk Kahvesi  40.00
+Latte         65.00
+
+Beklenen INSERT hatası:
+SQLSTATE 23503 — foreign_key_violation
+Sebep: order_item.product_id alanı product tablosunda bulunmayan 999 değerini referans gösteriyor.
+
+ROLLBACK sonrası SELECT:
+Çay           20.00
+Türk Kahvesi  35.00
+Latte         60.00
+
+Kontrol: İlk ve son fiyatlar aynı olmalı; ortadaki fiyatlar 5 TL artmış olmalı.
